@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Simulador Financeiro</title>
+    
+    <!--Chamada de scripts para comportamento e aparência-->
+    <link rel="stylesheet" href="/res/scr/estilo.css">
+    <script src="/res/scr/formulario.js"></script>
+
+</head>
+<body>
+
+    <!--Título do projeto-->
+    <h1>Simulador Financeiro</h1>
+    
+    <!--Tag <form> para empacotar os dados inseridos através das tags <input>-->
+    <form name="formInvestimento" method="post">
+
+        <!--Div.coluna é usado para permitir a divisão no eixo vertical entre os <input>-->
+        <div class="coluna" id="0">
+            
+            <p>Título</p>
+            <!--Não existe tag <combobox>, então faz-se uso de uma div implementando Javascript-->
+            <div class="combo-box">
+                <p>CDB, TESOURO DIRETO...</p>
+            </div>
+
+            <p>Data do Vencimento</p>
+            <input type="date" id="dataVencimento">
+        
+        </div>
+
+        <div class="coluna" id="1">
+            
+            <p>Valor do Investimento</p>
+            <!--A função validarNumero() serve para evitar que o usuário insira valores não-numéricos-->
+            <input type="number" id="valorInvestimento" placeholder="R$ 000,00" oninput="validarNumero(this);">
+
+            <p>Aporte mensal</p>
+            <input type="number" id="aporteMensal" placeholder="R$ 000,00">
+
+        </div>
+
+    </form>
+
+    <button type="button" id="btnCalc">Calcular!!</button>
+
+    <table id="tabelaSaida">
+
+        <tr>
+            <td>
+                <p>Valor Líquido Investido</p>
+            </td>
+
+            <td>
+                <p id="td0">R$ 0,00</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Rentabilidade Bruta</p>
+            </td>
+
+            <td>
+                <p id="td1">R$ 0,00</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Taxa IOF</p>
+            </td>
+
+            <td>
+                <p id="td2">R$ 0,00</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Alíquota de IRPF</p>
+            </td>
+
+            <td>
+                <p id="td3">00,00%</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Rentabilidade Líquida</p>
+            </td>
+
+            <td>
+                <p id="td4">R$ 0,00</p>
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
