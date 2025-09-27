@@ -6,24 +6,24 @@
     
     <title>Simulador Financeiro</title>
     
-    <!--Chamada de scripts para comportamento e aparência-->
+    <!-- Chamada de scripts para comportamento e aparência -->
     <link rel="stylesheet" href="/res/scr/estilo.css">
     <script src="/res/scr/formulario.js"></script>
 
 </head>
 <body>
 
-    <!--Título do projeto-->
+    <!-- Título do projeto -->
     <h1>Simulador Financeiro</h1>
     
-    <!--Tag <form> para empacotar os dados inseridos através das tags <input>-->
+    <!-- Tag <form> para empacotar os dados inseridos através das tags <input> -->
     <form name="formInvestimento" method="post">
 
-        <!--Div.coluna é usado para permitir a divisão no eixo vertical entre os <input>-->
+        <!-- Div.coluna é usado para permitir a divisão no eixo vertical entre os <input> -->
         <div class="coluna" id="0">
             
             <p>Título</p>
-            <!--Não existe tag <combobox>, então faz-se uso de uma div implementando Javascript-->
+            <!-- Não existe tag <combobox>, então faz-se uso de uma div implementando Javascript -->
             <div class="combo-box">
                 <p>CDB, TESOURO DIRETO...</p>
             </div>
@@ -36,7 +36,7 @@
         <div class="coluna" id="1">
             
             <p>Valor do Investimento</p>
-            <!--A função validarNumero() serve para evitar que o usuário insira valores não-numéricos-->
+            <!-- A função validarNumero() serve para evitar que o usuário insira valores não-numéricos -->
             <input type="number" id="valorInvestimento" placeholder="R$ 000,00" oninput="validarNumero(this);">
 
             <p>Aporte mensal</p>
@@ -46,16 +46,21 @@
 
     </form>
 
+    <!-- Botão (o único na tela) -->
     <button type="button" id="btnCalc">Calcular!!</button>
 
+    <!-- Tabela para saída de dados -->
     <table id="tabelaSaida">
 
+        <!-- <tr> (tag row) refere-se às linhas na tabela -->
         <tr>
+            <!-- <td> (tag data) refere-se às celulas (ou divisórias) na tabela-->
             <td>
                 <p>Valor Líquido Investido</p>
             </td>
 
             <td>
+                <!-- Acrescentei o id="tdNúmero" para que ao interagir com o html, esta tag tenha um endereço fixo -->
                 <p id="td0">R$ 0,00</p>
             </td>
         </tr>
