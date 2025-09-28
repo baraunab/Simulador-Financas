@@ -1,0 +1,32 @@
+/* Container principal */
+body > * {
+    margin: 0 auto;
+    display: block;
+}
+
+/* Os elementos na tela não ocuparão
+além de 60% do tamanho na horizontal */
+form, h1, #btnCalc, #tabelaSaida {
+    max-width: 60vw;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    font-size: 2.8em;
+    margin-top: 4vh;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Colunas do formulário */
+#tabelaSaida tr td {
+    padding: 12px 18px;
+    border-bottom: 1px solid #eee;
+}
