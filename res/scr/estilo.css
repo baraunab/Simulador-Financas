@@ -4,20 +4,35 @@ body > * {
     display: block;
 }
 
+/*Definir cor do fundo da página*/
+body {
+    background-color: #1A1A1A;
+}
+
 /* Os elementos na tela não ocuparão
 além de 60% do tamanho na horizontal */
-form, h1, #btnCalc, #tabelaSaida {
-    max-width: 60vw;
+form, h1, #btnCalc, #tabelaSaida, .fundoForms {
+    background-color: #DFDCFB;
+    max-width: 35vw;
+}
+
+/*Fundo do formulário com bordas estilizadas*/
+.fundoForms {
+    border-radius: 12px;
+    margin-top: 6%;
+    padding: 10px;
+
 }
 
 /* Título */
 h1 {
+    font-family: "Sulphur Point", sans-serif;;
     text-align: center;
-    font-size: 2.8em;
-    margin-top: 4vh;
-    margin-bottom: 30px;
+    font-size: 2.5em;
+    margin-top: 20px;
     letter-spacing: 2px;
-}
+    border-radius: 20px 20px 0px 0px;
+}   
 
 /* Formulario */
 form {
@@ -25,8 +40,135 @@ form {
     justify-content: space-between;
 }
 
+/*Parágrafos usados de titulos para as opções*/
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    margin-top: 20px;
+}
+
+/*Estilização dos campos*/
+#dataVencimento, .valorInvestimento, #aporteMensal {
+    border-radius: 24px;
+    padding: 10px;
+    border: 3px solid #9087C2;
+    background-color: white;
+    width: 11vw;
+}
+
+/*Estilo de select*/
+select,
+::picker(select) {
+   appearance: base-select;
+}
+
+/*Estilização do select*/
+select {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border: 2px solid #9087C2;
+    background: white;
+    padding: 10px;
+    border-radius: 24px;
+    transition: 0.4s;
+}
+
+#opcoesInvestimento {
+    width: 11vw;
+}
+
+/*Costumização do icone do select*/
+select::picker-icon {
+    color: #423C7B;
+    transition: 0.4s rotate;
+}
+
+/*Animação do icone*/
+select:open::picker-icon {
+   rotate: 180deg;
+}
+
+/*Estilização das opções do select*/
+option{
+    font-size: 12px;
+    border-bottom: 1px solid #9087C2;
+    padding: 2px;
+
+    /*Remover o checkmark*/
+    &::checkmark {
+      display: none;
+    }
+}
+
+/*Estilização do campo de data de vencimento*/
+#dataVencimento {
+    background-color: rgb(205, 203, 203);
+    width: 140px;
+}
+
+
+/*Div que centraliza o botão no formulário*/
+.fundoBtn {
+    text-align: center;
+    background-color: #DFDCFB;
+    max-width: 35vw;
+}
+
+/*Botão do cálculo*/
+#btnCalc{
+    width: 10vw;
+    padding: 10px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: 3px solid #9087C2;
+    background-color: #423C7B;    
+    text-shadow: 2px 2px 4px #000000;
+    color:white;
+}
+
+/*Tabela dos resultados*/
+#tabelaSaida {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    border-radius: 25px;
+    border: 2px solid #9087C2;
+    background-color: white;
+}
+
+/*Definição do tamanho das celulas e cores das bordas*/
+tr td {
+    padding: 2px 40px;
+    border-left: 1px solid #8B8B8B;
+    border-bottom: 1px solid #8B8B8B;
+}
+
+
 /* Colunas do formulário */
-#tabelaSaida tr td {
-    padding: 12px 18px;
-    border-bottom: 1px solid #eee;
+.coluna {
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 1vw;
+}
+
+/*Fonte usada no título*/
+.sulphur-point-light {
+    font-family: "Sulphur Point", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.sulphur-point-regular {
+    font-family: "Sulphur Point", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sulphur-point-bold {
+    font-family: "Sulphur Point", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
