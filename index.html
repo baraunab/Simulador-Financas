@@ -7,15 +7,19 @@
     <title>Simulador Financeiro</title>
     
     <!-- Chamada de scripts para comportamento e aparência -->
-    <link rel="stylesheet" href="/res/scr/estilo.css">
+    <link rel="stylesheet" href="./res/scr/estilo.css">
     <script src="/res/scr/formulario.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
-
+    <div class="fundoForms">
     <!-- Título do projeto -->
     <h1>Simulador Financeiro</h1>
-    
+
     <!-- Tag <form> para empacotar os dados inseridos através das tags <input> -->
     <form name="formInvestimento" method="post">
 
@@ -23,13 +27,17 @@
         <div class="coluna" id="0">
             
             <p>Título</p>
-            <!-- Não existe tag <combobox>, então faz-se uso de uma div implementando Javascript -->
+            <!--Combo box com select simples de opções de investimento-->
             <div class="combo-box">
-                <p>CDB, TESOURO DIRETO...</p>
+                <select id="opcoesInvestimento">
+                    <option value="0" disabled hidden selected>Selecione...</option>
+                    <option value="1">CDB</option>
+                    <option value="2">Tesouro Direto</option>
+                </select>
             </div>
 
             <p>Data do Vencimento</p>
-            <input type="date" id="dataVencimento">
+            <input type="date" id="dataVencimento" disabled>
         
         </div>
 
@@ -37,7 +45,7 @@
             
             <p>Valor do Investimento</p>
             <!-- A função validarNumero() serve para evitar que o usuário insira valores não-numéricos -->
-            <input type="number" id="valorInvestimento" placeholder="R$ 000,00" oninput="validarNumero(this);">
+            <input type="number" class="valorInvestimento" placeholder="R$ 000,00" oninput="validarNumero(this);">
 
             <p>Aporte mensal</p>
             <input type="number" id="aporteMensal" placeholder="R$ 000,00">
@@ -46,8 +54,13 @@
 
     </form>
 
+
     <!-- Botão (o único na tela) -->
-    <button type="button" id="btnCalc">Calcular!!</button>
+    <div class="fundoBtn">
+
+        <button type="button" id="btnCalc">Calcular!!</button>
+
+    </div>
 
     <!-- Tabela para saída de dados -->
     <table id="tabelaSaida">
@@ -106,6 +119,8 @@
         </tr>
 
     </table>
+
+    </div>
 
 </body>
 </html>
