@@ -132,7 +132,6 @@ option{
 #tabelaSaida {
     margin-left: auto;
     margin-right: auto;
-    border-collapse: collapse;
     margin-bottom: 40px;
     border-radius: 25px;
     border: 2px solid #9087C2;
@@ -146,6 +145,10 @@ tr td {
     border-bottom: 1px solid #8B8B8B;
 }
 
+/*Gambiarra na tabela*/
+tr td.a{
+    border-left: 0;
+}
 
 /* Colunas do formulário */
 .coluna {
