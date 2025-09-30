@@ -31,8 +31,13 @@
             <div class="combo-box">
                 <select id="opcoesInvestimento">
                     <option value="0" disabled hidden selected>Selecione...</option>
-                    <option value="1">CDB</option>
-                    <option value="2">Tesouro Direto</option>
+                    <option value="1">CDB - 102%</option>
+                    <option value="1">CDB - 104%</option>
+                    <option value="1">CDB - 106%</option>
+                    <option value="1">CDB - 108%</option>
+                    <option value="1">CDB - 106%</option>
+                    <option value="2">Tesouro Prefixado</option>
+                    <option value="1">Tesouro Selic</option>
                 </select>
             </div>
 
@@ -45,10 +50,10 @@
             
             <p>Valor do Investimento</p>
             <!-- A função validarNumero() serve para evitar que o usuário insira valores não-numéricos -->
-            <input type="number" id="valorInvestimento" placeholder="R$ 000,00" oninput="validarNumero(this);">
+            <input type="number" id="valorInvestimento" placeholder="R$ 000,00" oninput="validarNumero(this);" required autofocus>
 
             <p>Aporte mensal</p>
-            <input type="number" id="aporteMensal" placeholder="R$ 000,00">
+            <input type="number" id="aporteMensal" placeholder="R$ 000,00" required autofocus>
 
         </div>
 
@@ -58,7 +63,7 @@
     <!-- Botão (o único na tela) -->
     <div class="fundoBtn">
 
-        <button type="button" id="btnCalc">Calcular!!</button>
+        <button type="button" id="btnCalc" >Calcular!!</button>
 
     </div>
 
@@ -69,7 +74,7 @@
         <tr>
             <!-- <td> (tag data) refere-se às celulas (ou divisórias) na tabela-->
             <!-- Acrescentei class="a" em todas as td's para corrigir um bug visual do css -->
-            <td class="a">
+            <td class="l">
                 <p>Valor Líquido Investido</p>
             </td>
 
@@ -80,42 +85,42 @@
         </tr>
 
         <tr>
-            <td class="a">
+            <td class="l">
                 <p>Rentabilidade Bruta</p>
             </td>
 
             <td>
-                <p id="td1">R$ 0,00</p>
+                <p id="rentabilidadeBruta">R$ 0,00</p>
             </td>
         </tr>
 
         <tr>
-            <td class="a">
+            <td class="l">
                 <p>Taxa IOF</p>
             </td>
 
             <td>
-                <p id="td2">R$ 0,00</p>
+                <p id="taxaIOF">R$ 0,00</p>
             </td>
         </tr>
 
         <tr>
-            <td class="a">
+            <td class="l">
                 <p>Alíquota de IRPF</p>
             </td>
 
             <td>
-                <p id="td3">00,00%</p>
+                <p id="aliquotaIRPF">00,00%</p>
             </td>
         </tr>
 
         <tr>
-            <td class="a">
+            <td class="l b">
                 <p>Rentabilidade Líquida</p>
             </td>
 
-            <td>
-                <p id="td4">R$ 0,00</p>
+            <td class="b">
+                <p class="b" id="rentabilidadeLiq">R$ 0,00</p>
             </td>
         </tr>
 
