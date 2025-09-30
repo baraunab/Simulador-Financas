@@ -48,13 +48,19 @@ p {
 }
 
 /*Estilização dos campos*/
-#dataVencimento, .valorInvestimento, #aporteMensal {
+#dataVencimento, #valorInvestimento, #aporteMensal {
     border-radius: 24px;
     padding: 10px;
     border: 3px solid #9087C2;
     background-color: white;
     width: 11vw;
+    outline: none;
 }
+
+#valorInvestimento:focus, #aporteMensal:focus, select:focus{
+    border: 3px solid #423C7B;
+}
+
 
 /*Estilo de select*/
 select,
@@ -74,8 +80,9 @@ select {
 }
 
 #opcoesInvestimento {
-    width: 11vw;
+    width: 12.44vw;
 }
+
 
 /*Costumização do icone do select*/
 select::picker-icon {
@@ -103,7 +110,7 @@ option{
 /*Estilização do campo de data de vencimento*/
 #dataVencimento {
     background-color: rgb(205, 203, 203);
-    width: 140px;
+    width: 25wv;
 }
 
 
