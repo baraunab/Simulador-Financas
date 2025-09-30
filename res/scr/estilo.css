@@ -131,8 +131,21 @@ option{
     border-radius: 20px;
     border: 3px solid #9087C2;
     background-color: #423C7B;    
+    box-shadow: 0 3px #2e2a5c;
     text-shadow: 2px 2px 4px #000000;
     color:white;
+}
+
+#btnCalc:hover{
+    background-color: #2e2a5c;
+    border: 3px solid #9087C2;
+    color: white;
+    text-shadow: 4px 4px 5px #423C7B;
+}
+
+#btnCalc:active{
+    transform: translateY(2px);
+    box-shadow: none;
 }
 
 /*Tabela dos resultados*/
@@ -153,8 +166,13 @@ tr td {
 }
 
 /*Gambiarra na tabela*/
-tr td.a{
+.l{
     border-left: 0;
+}
+
+
+.b{
+    border-bottom:0;
 }
 
 /* Colunas do formulário */
