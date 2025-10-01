@@ -9,6 +9,7 @@
     <!-- Chamada de scripts para comportamento e aparência -->
     <link rel="stylesheet" href="./res/scr/estilo.css">
     <script src="/res/scr/formulario.js"></script>
+    <script src="/res/scr/api.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,13 +32,13 @@
             <div class="combo-box">
                 <select id="opcoesInvestimento">
                     <option value="0" disabled hidden selected>Selecione...</option>
-                    <option value="1">CDB - 102%</option>
-                    <option value="1">CDB - 104%</option>
-                    <option value="1">CDB - 106%</option>
-                    <option value="1">CDB - 108%</option>
-                    <option value="1">CDB - 106%</option>
-                    <option value="2">Tesouro Prefixado</option>
-                    <option value="1">Tesouro Selic</option>
+                    <option label="CDB_102" value="1">CDB - 102%</option>
+                    <option label="CDB_104" value="1">CDB - 104%</option>
+                    <option label="CDB_106" value="1">CDB - 106%</option>
+                    <option label="CDB_108" value="1">CDB - 108%</option>
+                    <option label="CDB_106" value="1">CDB - 106%</option>
+                    <option label="TESOURO_PREFIXADO" value="2">Tesouro Prefixado</option>
+                    <option label="TESOURO_SELIC" value="1">Tesouro Selic</option>
                 </select>
             </div>
 
@@ -63,7 +64,7 @@
     <!-- Botão (o único na tela) -->
     <div class="fundoBtn">
 
-        <button type="button" id="btnCalc" >Calcular!!</button>
+        <button type="button" id="btnCalc" onclick="simular();">Calcular!!</button>
 
     </div>
 
