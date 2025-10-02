@@ -48,7 +48,7 @@ p {
 }
 
 /*Estilização dos campos*/
-#dataVencimento, #valorInvestimento, #aporteMensal {
+#dataV, #valorInvestimento, #aporteMensal {
     border-radius: 24px;
     padding: 10px;
     border: 3px solid #9087C2;
@@ -108,7 +108,8 @@ option{
 }
 
 /*Estilização do campo de data de vencimento*/
-#dataVencimento {
+#dataV {
+    color:#000000;
     background-color: rgb(205, 203, 203);
     width: 25wv;
 }
