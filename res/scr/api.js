@@ -1,5 +1,5 @@
 function atualizar_tabela(resultado) {
-    const valor_liquido_investido = document.getElementById("td0"); // valor liquido
+    const valor_liquido_investido = document.getElementById("valorLiquido"); // valor liquido
     const rentabilidade_bruta = document.getElementById("rentabilidadeBruta");
     const taxa_iof = document.getElementById("taxaIOF");
     const aliquota_irpf = document.getElementById("aliquotaIRPF");
@@ -10,21 +10,22 @@ function atualizar_tabela(resultado) {
     taxa_iof.innerText = resultado.iof.toString();
     aliquota_irpf.innerText = resultado.irpf.toString();
     rentabilidade_liquida.innerText = resultado.rentabilidade_liquida.toString();
+
+    formatarValores(valor_liquido_investido, rentabilidade_bruta, taxa_iof, aliquota_irpf, rentabilidade_liquida);
 }
 
 async function simular() {
     const valorInvestimento = document.getElementById("valorInvestimento");
     const opcoesInvestimento = document.getElementById("opcoesInvestimento");
-    const dataVencimento = document.getElementById("dataVencimento");
     const aporteMensal = document.getElementById("aporteMensal");
     
     const URL = "http://localhost:8000/simular";
 
     const infos = {
-        produto: opcoesInvestimento.options[opcoesInvestimento.selectedIndex].label,
+        produto: opcoesInvestimento.options[opcoesInvestimento.selectedIndex].value,
         valor_inicial: valorInvestimento.valueAsNumber,
         aporte_mensal: aporteMensal.valueAsNumber,
-        data_inicio: "2025-12-12",
+        data_inicio: definirDataInicial(),
     }
 
     const res = await fetch(URL, {
@@ -38,4 +39,32 @@ async function simular() {
     const resultado = await res.json();
     console.log(resultado)
     atualizar_tabela(resultado);
+}
+
+
+function formatarValores(a, b, c, d, e) {
+    var valorLiquido = a;
+    var rentabilidadeBruta = b;
+    var taxaIOF = c;
+    var aliquotaIRPF = d;
+    var rentabilidadeLiq = e;
+    
+    valorLiquido.innerText = `R$ ${valorLiquido.innerText}`;
+    rentabilidadeBruta.innerText = `R$ ${rentabilidadeBruta.innerText}`;
+    taxaIOF.innerText = `R$ ${taxaIOF.innerText}`;
+    aliquotaIRPF.innerText = `${aliquotaIRPF.innerText}%`;
+    rentabilidadeLiq.innerText = `R$ ${rentabilidadeLiq.innerText}`;
+}
+
+function definirDataInicial() {
+  //Pega data local e adiciona 180 dias
+  const dataAtual = new Date();
+  dataAtual.setDate(dataAtual.getDate()); 
+  
+  //Formatação da data em dd/mm/yyyy
+  const dia = String(dataAtual.getDate()).padStart(2, '0');
+  const mes = String(dataAtual.getMonth() + 1).padStart(2, '0');
+  const ano = dataAtual.getFullYear();
+
+  return `${ano}-${mes}-${dia}`;
 }
