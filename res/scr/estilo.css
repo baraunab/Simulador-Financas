@@ -32,7 +32,7 @@ h1 {
     margin-top: 20px;
     letter-spacing: 2px;
     border-radius: 20px 20px 0px 0px;
-}   
+}
 
 /* Formulario */
 form {
@@ -65,7 +65,20 @@ p {
 /*Estilo de select*/
 select,
 ::picker(select) {
-   appearance: base-select;
+    appearance: base-select;
+    border: none;
+    position: relative;
+    top: -2px;
+    padding: 10px;
+    border-bottom: 2px solid #9087C2;
+    border-left: 2px solid #9087C2;
+    border-right: 2px solid #9087C2;;
+}
+::picker(select) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
 }
 
 /*Estilização do select*/
@@ -76,6 +89,14 @@ select {
     background: white;
     padding: 10px;
     border-radius: 24px;
+    transition: 0.4s;
+}
+
+select:active, select:open {
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     transition: 0.4s;
 }
 
@@ -98,7 +119,6 @@ select:open::picker-icon {
 /*Estilização das opções do select*/
 option{
     font-size: 12px;
-    border-bottom: 1px solid #9087C2;
     padding: 2px;
 
     /*Remover o checkmark*/
@@ -135,18 +155,22 @@ option{
     box-shadow: 0 3px #2e2a5c;
     text-shadow: 2px 2px 4px #000000;
     color:white;
+    transition: 0.5s;
 }
 
 #btnCalc:hover{
-    background-color: #2e2a5c;
+    background-color: #6c64b3;
     border: 3px solid #9087C2;
     color: white;
     text-shadow: 4px 4px 5px #423C7B;
+    transition: 0.5s;
 }
 
 #btnCalc:active{
     transform: translateY(2px);
+    background-color: #2e2a5c;
     box-shadow: none;
+    transition: 0.1s;
 }
 
 /*Tabela dos resultados*/
