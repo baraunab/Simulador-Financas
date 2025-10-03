@@ -1,7 +1,3 @@
-function validarNumero(input) {
-  input.value = input.value.replace(/[^0-9]/g, '');
-}
-
 function definirDataVenc() {
   //Pega data local e adiciona 180 dias
   const dataAtual = new Date();

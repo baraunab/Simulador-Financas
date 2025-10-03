@@ -8,8 +8,8 @@
     
     <!-- Chamada de scripts para comportamento e aparência -->
     <link rel="stylesheet" href="./res/scr/estilo.css">
-    <script src="/res/scr/formulario.js"></script>
-    <script src="/res/scr/api.js"></script>
+    <script type="module" src="./res/scr/formulario.js"></script>
+    <script src="./res/scr/api.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,13 +32,13 @@
             <div class="combo-box">
                 <select id="opcoesInvestimento">
                     <option value="0" disabled hidden selected>Selecione...</option>
-                    <option label="CDB_102">CDB - 102%</option>
-                    <option label="CDB_104">CDB - 104%</option>
-                    <option label="CDB_106">CDB - 106%</option>
-                    <option label="CDB_108">CDB - 108%</option>
-                    <option label="CDB_106">CDB - 106%</option>
-                    <option label="TESOURO_PREFIXADO">Tesouro Prefixado</option>
-                    <option label="TESOURO_SELIC">Tesouro Selic</option>
+                    <option value="CDB_102">CDB - 102%</option>
+                    <option value="CDB_104">CDB - 104%</option>
+                    <option value="CDB_106">CDB - 106%</option>
+                    <option value="CDB_108">CDB - 108%</option>
+                    <option value="CDB_106">CDB - 106%</option>
+                    <option value="TESOURO_PREFIXADO">Tesouro Prefixado</option>
+                    <option value="TESOURO_SELIC">Tesouro Selic</option>
                 </select>
             </div>
 
@@ -51,7 +51,7 @@
             
             <p>Valor do Investimento</p>
             <!-- A função validarNumero() serve para evitar que o usuário insira valores não-numéricos -->
-            <input type="number" id="valorInvestimento" placeholder="R$ 000,00" oninput="validarNumero(this);" required autofocus>
+            <input type="number" id="valorInvestimento" placeholder="R$ 000,00" required autofocus>
 
             <p>Aporte mensal</p>
             <input type="number" id="aporteMensal" placeholder="R$ 000,00" required autofocus>
@@ -81,7 +81,7 @@
 
             <td>
                 <!-- Acrescentei o id="tdNúmero" para que ao interagir com o html, esta tag tenha um endereço fixo -->
-                <p id="td0">R$ 0,00</p>
+                <p id="valorLiquido">R$ 0,00</p>
             </td>
         </tr>
 
