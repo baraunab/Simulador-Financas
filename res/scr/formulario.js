@@ -15,4 +15,5 @@ function definirDataVenc() {
 document.getElementById("opcoesInvestimento").addEventListener("change", function() {
   const dataVencimento = definirDataVenc();
   document.getElementById("dataV").value = dataVencimento;
+  console.log(dataVencimento);
 });
