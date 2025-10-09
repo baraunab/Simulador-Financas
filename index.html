@@ -50,15 +50,14 @@
             
             <p>Valor do Investimento</p>
             <!-- A função validarNumero() serve para evitar que o usuário insira valores não-numéricos -->
-            <input type="number" id="valorInvestimento" placeholder="R$ 000,00" required autofocus>
+            <input type="number" oninput="inputMask(this);" id="valorInvestimento" placeholder="R$ 000,00" required autofocus>
 
             <p>Aporte mensal</p>
-            <input type="number" id="aporteMensal" placeholder="R$ 000,00" required autofocus>
+            <input type="number" oninput="inputMask(this);" id="aporteMensal" placeholder="R$ 000,00" required autofocus>
 
         </div>
 
     </form>
-
 
     <!-- Botão (o único na tela) -->
     <div class="fundoBtn">
@@ -106,11 +105,11 @@
 
         <tr>
             <td class="l">
-                <p>Alíquota de IRPF</p>
+                <p>Alíquota de IRPF (22,5%)</p>
             </td>
 
             <td>
-                <p id="aliquotaIRPF">00,00%</p>
+                <p id="aliquotaIRPF">R$ 0,00</p>
             </td>
         </tr>
 

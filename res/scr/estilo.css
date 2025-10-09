@@ -55,6 +55,17 @@ p {
     background-color: white;
     width: 11vw;
     outline: none;
+    direction: rtl;
+}
+
+/* Ocultar botões de incremento/decremento nos inputs numéricos */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 #valorInvestimento:focus, #aporteMensal:focus, select:focus{
@@ -68,11 +79,11 @@ select,
     appearance: base-select;
     border: none;
     position: relative;
-    top: -2px;
+    top: -3px;
     padding: 10px;
     border-bottom: 3px solid #9087C2;
     border-left: 3px solid #9087C2;
-    border-right: 3px solid #9087C2;;
+    border-right: 3px solid #9087C2;
 }
 ::picker(select) {
     border-top-left-radius: 0;
