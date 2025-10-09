@@ -8,7 +8,7 @@ function atualizar_tabela(resultado) {
     valor_liquido_investido.innerText = resultado.valor_final_liquido.toString();
     rentabilidade_bruta.innerText = resultado.rentabilidade_bruta.toString();
     taxa_iof.innerText = resultado.iof.toString();
-    aliquota_irpf.innerText = resultado.irpf.toString();
+    aliquota_irpf.innerText = 0.225*(resultado.valor_final_liquido).toString().slice(0, -2);
     rentabilidade_liquida.innerText = resultado.rentabilidade_liquida.toString();
 
     formatarValores(valor_liquido_investido, rentabilidade_bruta, taxa_iof, aliquota_irpf, rentabilidade_liquida);
@@ -52,7 +52,7 @@ function formatarValores(a, b, c, d, e) {
     valorLiquido.innerText = `R$ ${valorLiquido.innerText}`;
     rentabilidadeBruta.innerText = `R$ ${rentabilidadeBruta.innerText}`;
     taxaIOF.innerText = `R$ ${taxaIOF.innerText}`;
-    aliquotaIRPF.innerText = `${aliquotaIRPF.innerText}%`;
+    aliquotaIRPF.innerText = `R$ ${aliquotaIRPF.innerText}`;
     rentabilidadeLiq.innerText = `R$ ${rentabilidadeLiq.innerText}`;
 }
 
@@ -68,3 +68,24 @@ function definirDataInicial() {
 
   return `${ano}-${mes}-${dia}`;
 }
+
+
+function inputMask(e) {
+  var input = e;
+  var calc;
+
+  if (input.value.length > 2  && input.value.length < 4) {
+    calc = input.value / 100;
+    input.value = calc.toFixed(2);
+  }
+  if (input.value.length > 4) {
+    calc = input.value * 10;
+    input.value = calc.toFixed(2);
+  }
+  document.addEventListener("keydown", function(event) {
+    if (event.code === "Backspace") {
+        input.value = "";
+    }
+});
+}
+
