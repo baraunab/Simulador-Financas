@@ -7,8 +7,8 @@ function atualizar_tabela(resultado) {
     
     valor_liquido_investido.innerText = resultado.valor_final_liquido.toString();
     rentabilidade_bruta.innerText = resultado.rentabilidade_bruta.toString();
-    taxa_iof.innerText = resultado.iof.toString();
-    aliquota_irpf.innerText = 0.225*(resultado.valor_final_liquido).toString().slice(0, -2);
+    taxa_iof.innerText = resultado.dias.toString() + " dias";
+    aliquota_irpf.innerText = (resultado.irpf).toString();
     rentabilidade_liquida.innerText = resultado.rentabilidade_liquida.toString();
 
     formatarValores(valor_liquido_investido, rentabilidade_bruta, taxa_iof, aliquota_irpf, rentabilidade_liquida);
@@ -51,7 +51,7 @@ function formatarValores(a, b, c, d, e) {
     
     valorLiquido.innerText = `R$ ${valorLiquido.innerText}`;
     rentabilidadeBruta.innerText = `R$ ${rentabilidadeBruta.innerText}`;
-    taxaIOF.innerText = `R$ ${taxaIOF.innerText}`;
+    taxaIOF.innerText = `${taxaIOF.innerText}`;
     aliquotaIRPF.innerText = `R$ ${aliquotaIRPF.innerText}`;
     rentabilidadeLiq.innerText = `R$ ${rentabilidadeLiq.innerText}`;
 }
